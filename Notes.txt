@@ -1,0 +1,110 @@
+DDD- Domain Driven Design
+CQRS Pattern
+
+API Gateway : Ocelot
+Identity Server  :SqlExpress EfCore
+Catalog API: MongoDB
+Basket API : Redis , StockExchange Redis
+Discount API : PostgreSQL, Dapper
+Message Broker : RabbitMQ
+Order API : SqlExpress EfCore
+
+
+ASP.Net Core Mvc :microservisler tüketecek
+JWT : Authentication/Authorization token microservisler arasý kimlik doðrulama/ytkilendirme
+Docker : saannaltýrma teknolojisi, microservisleri ve kullandýklarý dbleri ayaða kaldýracak cont
+Identity on Asp.Net Core : Kimlik doðrulama üyelik sistemi,  OAuth 2.0 - OpenID protokollerine uygun
+Asp.Net Core MVC API : Endpointler
+Identity Server Library OAuth 2.0 - OpenID Framework : Üyelik sistemi, token daðýtýcý, open source
+Redis : NoSQL DB, Distributed Memory Cache
+RabbitMQ : Message Broker, Microservisler arasý asenkron ietiþim, mesaj kuyruðu, open source
+
+
+Sql Server Express : DBeaver Community IDE
+PostgreSQL : DBeaver Community IDE
+MongoDB : MondoDB Compass
+Redis : Anpther Redis Desktop Manager  
+
+Identity server: .net Core 3.1 sonrasý lisnaslý.
+
+Monolithic Architecture : Tek solution üzerinde n katmanlý genellikle tek db olan yapý. Separation Of Concern  için katmanlar inþa edilir User Interface, Bussiness Layer ve Data Layer.
+
+Microservice Architecture: Birbirinden baðýmsýz olarak geliþip diðer servislerle iletiþime geçebilir.
+
+Microservice UI     ==>      Microservice
+    ||                       ||          ||
+    \/ 	                     \/          \/
+Microservice           Microservice   Microservice
+ Db                        Db              Db
+	
+Microservice Avantajlarý:
+- Baðýmýsýzdýr.
+- Baðýmsýz scale edilebilir.
+- Hata izolasyonu düþük. Herhangi bir microservis çalýþmassa uygulamayý etilkemez. 
+- Küçük proje olmasýndan maintain (bakým) daha kolay
+
+Microservice Dezavantajlarý:
+- Servisler arasý iletiþim complex olduðundan yönetmek zor.
+- Transaction. Saga gibi dizayn paternler uygulanýr.
+- Debugging.
+- Monitoring.
+
+Microservice Ýletiþim: 
+Synchronous communication             Asynchronous communication
+																		   M 
+ Microservice A                         Microservice A   ==============>   e B
+       ||                                                                  s r
+	   || Ýþlem yapýp                      Sonuç beklenmez                 s o
+	   ||sonuç beklenir.                                                   a k
+       \/								Microservice B   <==============   g e
+  Microservice B                                                           e r
+  
+Mesaj ile event arasýndaki fark:
+
+Message:
+Ýþlenmesi gerekli datayý taþýr.
+Mesajý gönderen mesajýn nasýl iþleneceðini bilir. 
+Subscriber geri bilgilendirme yapar.
+
+              WordToPDF
+
+Publisher <=================== Subscriber
+        ===> Message Broker ===> 
+
+Event: 
+Notification bildiri sistemi saðlar.
+Eventi fýrlatan nasýl elealýnacaðýný bilmez.
+Genelleikle geçmiþ ifde ile temsil edilir.
+Mesajlra göre daha küçüktür, içinde data olmadýðý için
+
+              UserCreatedEvent
+			  OrderCreatedEvent
+
+Publisher ===> Message Broker ===> Subscriber
+         
+**Her microservice ait Db olmalý, baþka microservicenin veri tabanýna direk eriþmemeli.
+
+
+Microserviceler arasý distributed transaction yönetimi: 
+
+- Two Phase Commit
+- Saga Pattern
+- *Eventual Consistency (Nihayi tutatlýk):  microserviceler arasýnda veri tutarlýlýðýný broker üzerinden saðlanabilir. Db üzerinde yapýlan deðiþiklik anlýk gerekmiyorsa kullanýlabilir.
+
+Mongo Db==>
+Sql terim      MondoDB terim
+Database------>Database 
+Table--------->Collection
+Row----------->Json document
+Column-------->Field
+
+
+Neden Mongo Db: Sütunlar dinamikse ve iliþkisel db ye ihtiyacýn yoksa no sql mantýklý.
+
+Projede mongodb için bire bir olan iliþkide embedded  pattern bire çok olan iliþkide reference pattern seçildi. 
+Detaylý bilgi : https://www.mongodb.com/docs/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/
+
+API den mongodb ile haberleþmek için MongoDB.Driver kullanýldý.
+
+
+
