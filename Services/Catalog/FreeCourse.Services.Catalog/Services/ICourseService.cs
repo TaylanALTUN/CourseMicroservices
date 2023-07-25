@@ -9,7 +9,7 @@ namespace FreeCourse.Services.Catalog.Services
 
         Task<Response<CourseDto>> GetByIdAsync(string id);
 
-        Task<Response<List<CourseDto>>> GetAllByUserIdsync(string userId);
+        Task<Response<List<CourseDto>>> GetAllByUserIdAsync(string userId);
 
         Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseCreateDto);
 
