@@ -110,3 +110,4 @@ Static Factory Method : Static methodlarla beraber geriye yenir nesne dönülmesi.
 Options Patern: Konfigurasyon dosyalarýný bir class üzerinden alarak okuma iþlemi
 
 
+C# 8.0 ile interface içinde tanýmlanan metotlarýn gövdeleri de yazýlabiliyor.
