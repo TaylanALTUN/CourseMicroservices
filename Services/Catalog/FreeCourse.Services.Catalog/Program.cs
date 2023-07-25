@@ -1,4 +1,11 @@
+using FreeCourse.Services.Catalog.Settings;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
+builder.Services.AddSingleton<IDatabaseSettings>(sp=> { return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value; });
 
 builder.Services.AddAutoMapper(typeof(Program));
 // Add services to the container.
