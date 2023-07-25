@@ -106,5 +106,7 @@ Detaylý bilgi : https://www.mongodb.com/docs/manual/tutorial/model-referenced-on
 
 API den mongodb ile haberleþmek için MongoDB.Driver kullanýldý.
 
+Static Factory Method : Static methodlarla beraber geriye yenir nesne dönülmesi.
+
 
 
