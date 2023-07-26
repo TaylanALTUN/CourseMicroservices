@@ -136,4 +136,9 @@ Identity Server4 templateler kurulup "dotnet new is4aspid" kodu ile FreeCourse.I
 
 https://github.com/IdentityServer/IdentityServer4.Templates
 
+portainer açıp, environment portainer tıkla, sol menü > App Templates > SqlServer Linux için olanı seç
+name : 	IdentityDB
+show advanced options : port mapping > host: 1433  container: 1433 öNEMLİ
+
+Deploy the contaienr.
 
