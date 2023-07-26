@@ -2,7 +2,7 @@
 
 namespace FreeCourse.Services.Catalog.Model
 {
-    internal class Course
+    public class Course
     {
         // BsonId attribute ile ilgili alanın MongoDb de Id olarak algılanması sağlanır. 
         // BsonRepresentation attribute ile ilgili alanın tipi belirlenir
@@ -14,7 +14,7 @@ namespace FreeCourse.Services.Catalog.Model
         public string Description { get; set; }
 
         [BsonRepresentation(MongoDB.Bson.BsonType.Decimal128)]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         public string UserId{ get; set; }
         public string Picture { get; set; }

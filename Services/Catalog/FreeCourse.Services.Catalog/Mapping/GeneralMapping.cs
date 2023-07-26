@@ -5,12 +5,13 @@ using MongoDB.Driver.Core.Misc;
 
 namespace FreeCourse.Services.Catalog.Mapping
 {
-    internal class GeneralMapping:Profile
+    public class GeneralMapping:Profile
     {
-        internal GeneralMapping()
+        public GeneralMapping()
         {
             CreateMap<Course,CourseDto>().ReverseMap();
             CreateMap<Category,CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryCreateDto>().ReverseMap();
             CreateMap<Model.Feature, FeatureDto>().ReverseMap();
 
             CreateMap<Course,CourseCreateDto>().ReverseMap();

@@ -7,7 +7,7 @@ using MongoDB.Driver;
 
 namespace FreeCourse.Services.Catalog.Services
 {
-    internal class CourseService: ICourseService
+    public class CourseService: ICourseService
     {
         private readonly IMongoCollection<Course> _courseCollection;
         private readonly IMongoCollection<Category> _categoryCollection;
@@ -81,7 +81,7 @@ namespace FreeCourse.Services.Catalog.Services
 
             await _courseCollection.InsertOneAsync(newCourse);
 
-            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), StatusCodes.Status204NoContent);
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse), StatusCodes.Status201Created);
         }
 
         public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
@@ -91,7 +91,7 @@ namespace FreeCourse.Services.Catalog.Services
             var result = await _courseCollection.FindOneAndReplaceAsync(x => x.Id == courseUpdateDto.Id, updateCourse);
 
             if (result == null)
-                return Response<NoContent>.Fail("Course not found", StatusCodes.Status404NotFound);
+                return Response<NoContent>.Fail("Course not found", StatusCodes.Status204NoContent);
 
             return Response<NoContent>.Success(StatusCodes.Status204NoContent);
         }

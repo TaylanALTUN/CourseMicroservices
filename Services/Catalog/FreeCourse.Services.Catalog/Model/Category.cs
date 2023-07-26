@@ -2,7 +2,7 @@
 
 namespace FreeCourse.Services.Catalog.Model
 {
-    internal class Category
+    public class Category
     {
         // BsonId attribute ile ilgili alanın MongoDb de Id olarak algılanması sağlanır. 
         // BsonRepresentation attribute ile ilgili alanın tipi belirlenir
