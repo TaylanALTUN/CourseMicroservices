@@ -132,4 +132,8 @@ MongoDb container ayakta.
 MongoDb Compass ile ayar :  mongodb://localhost:27017 ile direk baðlantý
 
 
+Identity Server4 templateler kurulup "dotnet new is4aspid" kodu ile FreeCourse.IdentityServer projesi oluþturuldu.
+
+https://github.com/IdentityServer/IdentityServer4.Templates
+
 
