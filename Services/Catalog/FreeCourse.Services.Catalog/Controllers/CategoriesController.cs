@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FreeCourse.Services.Catalog.Controllers
 {
+
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class CategoriesController : CustomBaseController
