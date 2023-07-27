@@ -142,3 +142,9 @@ show advanced options : port mapping > host: 1433  container: 1433 öNEMLÝ
 
 Deploy the contaienr.
 
+
+IdentityServer4 mevcut endpoit listele(Discovery Endpoint):  https://localhost:5001/.well-known/openid-configuration
+
+OAuth 2.0 Grant Types => Resource Owner Credentials Grant Type, Client Credentials Grant Type kullanýldý
+Resource Owner Credentials Grant Type: Kullanýcý ile ilgilil bilgiler gönderilip token alýnacak.
+Client Credentials Grant Type: Client bilgileri gönderilip token alýnacak.
