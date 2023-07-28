@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<RedisSetting>(builder.Configuration.GetSection("RedisSettings"));
 
 builder.Services.AddSingleton<RedisService>(sp =>

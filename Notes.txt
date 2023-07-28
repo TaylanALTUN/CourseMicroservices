@@ -148,3 +148,5 @@ IdentityServer4 mevcut endpoit listele(Discovery Endpoint):  https://localhost:5
 OAuth 2.0 Grant Types => Resource Owner Credentials Grant Type, Client Credentials Grant Type kullanýldý
 Resource Owner Credentials Grant Type: Kullanýcý ile ilgilil bilgiler gönderilip token alýnacak.
 Client Credentials Grant Type: Client bilgileri gönderilip token alýnacak.
+
+AddHttpContextAccessor: HttpContext nesnesine eriþimi saðlar. DI container a eklenmesi gerekir.
