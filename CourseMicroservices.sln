@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeeCourse.Services.PhotoStock", "Services\PhotoStock\FreeeCourse.Services.PhotoStock\FreeeCourse.Services.PhotoStock.csproj", "{D2170241-E741-43F9-8E42-97804EE67A5A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{C2D440B2-198E-4C5A-B5EB-6ABF2F6EE387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Basket", "Servisec\Basket\FreeCourse.Services.Basket\FreeCourse.Services.Basket.csproj", "{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{D2170241-E741-43F9-8E42-97804EE67A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2170241-E741-43F9-8E42-97804EE67A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2170241-E741-43F9-8E42-97804EE67A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,8 @@ Global
 		{093F7C54-3047-40F8-8EBC-66B8F28D3B05} = {9D26A814-425C-40C0-A5B9-CF6C2FDF4D4E}
 		{422D0092-EB76-4584-9406-8A7C07CDCCF4} = {D48523B4-CCC1-4805-97B4-060DCFA9BB16}
 		{D2170241-E741-43F9-8E42-97804EE67A5A} = {422D0092-EB76-4584-9406-8A7C07CDCCF4}
+		{C2D440B2-198E-4C5A-B5EB-6ABF2F6EE387} = {D48523B4-CCC1-4805-97B4-060DCFA9BB16}
+		{85C4FEAA-9480-46BF-9DE1-A5E0A709C6DF} = {C2D440B2-198E-4C5A-B5EB-6ABF2F6EE387}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9F66861-3CF6-4097-B1C9-E033C7632CC2}

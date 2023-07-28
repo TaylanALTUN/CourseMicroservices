@@ -10,6 +10,7 @@ namespace FreeeCourse.Services.PhotoStock.Controllers
     [ApiController]
     public class PhotosController : CustomBaseController
     {
+        [HttpPost]
         public async Task<IActionResult> PhotoSave(IFormFile photo, CancellationToken cancellationToken)
         {
             if (photo != null && photo.Length > 0)
@@ -32,11 +33,12 @@ namespace FreeeCourse.Services.PhotoStock.Controllers
             return CreateActionResultInstance(Response<PhotoDto>.Fail("Photo is emty",StatusCodes.Status404NotFound));
         }
 
-        public IActionResult PhotoDelete(string photoUrl, CancellationToken cancellationToken)
+        [HttpDelete]
+        public IActionResult PhotoDelete(string photoName)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoName);
 
-            if (System.IO.File.Exists(path)) return CreateActionResultInstance(Response<NoContent>.Fail("photo not found", StatusCodes.Status404NotFound));
+            if (!System.IO.File.Exists(path)) return CreateActionResultInstance(Response<NoContent>.Fail("photo not found", StatusCodes.Status404NotFound));
 
             System.IO.File.Delete(path);
 
