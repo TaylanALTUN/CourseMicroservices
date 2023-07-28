@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace FreeCourse.Services.Basket.Services
 {
-    public class BasketService : IBasketServices
+    public class BasketService : IBasketService
     {
         private readonly RedisService _redisService;
 

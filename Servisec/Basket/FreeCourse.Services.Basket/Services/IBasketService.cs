@@ -3,7 +3,7 @@ using FreeCourse.Shared.Dtos;
 
 namespace FreeCourse.Services.Basket.Services
 {
-    public interface IBasketServices
+    public interface IBasketService
     {
         Task<Response<BasketDto>> GetBasket(string userId);
 
