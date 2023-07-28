@@ -152,3 +152,7 @@ Client Credentials Grant Type: Client bilgileri gönderilip token alýnacak.
 AddHttpContextAccessor: HttpContext nesnesine eriþimi saðlar. DI container a eklenmesi gerekir.
 
 Jwt token içinde pyload datalarýndan "sub" datasý default NameIdentyfier isminde claime dönüþtürür engellemek için program.cs içinde  kod bulaðu kullanýlýr==> JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+
+Dapper: Hafif, hýzlý, kullanýmý kolay, performanslý, herhangi bir db ile kullanýlabilirlik ve basitleþtirilmiþ arayüz. Sql cümleciðinden gelecek olan datayý class a mappleyebiliyor.
+Dapper ef core dan temel farklarý => - Dapperda sql cümlecikleri yazýlýr, ef de link sorgularý yazýlýr.
+                                     - Dapper da memoride tred edilen herhangi bir data yok, ef de kapatýlmadýðý sürece var.
