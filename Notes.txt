@@ -150,3 +150,5 @@ Resource Owner Credentials Grant Type: Kullanýcý ile ilgilil bilgiler gönderilip
 Client Credentials Grant Type: Client bilgileri gönderilip token alýnacak.
 
 AddHttpContextAccessor: HttpContext nesnesine eriþimi saðlar. DI container a eklenmesi gerekir.
+
+Jwt token içinde pyload datalarýndan "sub" datasý default NameIdentyfier isminde claime dönüþtürür engellemek için program.cs içinde  kod bulaðu kullanýlýr==> JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
